@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <a href="mailto:litmustechsolutions@gmail.com"></a>
+    <a href="tel:+256702866529"></a>
+    
+    <title>Group B DSA | Stack ADT</title>
+</head>
+<body>
+    <nav class="navbar">
+        <h2>DSA <span>Stack</span></h2>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#live-demo">Live Demo</a></li>
+            <li><a href="#code-implementations">Code</a></li>
+            <li><a href="#complexities">Complexities</a></li>
+            <li><a href="#participants">Team</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <section id="home" class="home">
+        <div class="hero-container">
+            <div class="intro">
+                <h2>Data Structures and Algorithms</h2>
+            </div>
+            <div class="content">
+                <h1>Stack Abstract Data Types</h1>
+            </div>
+            
+            <div class="card">
+                <div class="loader">
+                    <p>ADTs like</p>
+                    <div class="words">
+                        <span class="word">push()</span>
+                        <span class="word">pop()</span>
+                        <span class="word">is_empty()</span>
+                        <span class="word">peek()</span>
+                        <span class="word">size()</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="btns">
+                <a href="#live-demo"><button class="animated-button">
+                <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                    ></path>
+                </svg>
+                <span class="text">Live Demo</span>
+                <span class="circle"></span>
+                <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                    ></path>
+                </svg>
+                </button></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="live-demo" class="live-demo">
+        <div class="container">
+            <h1>Stack ADT Live Demo</h1>
+            <div class="stack-display" id="stackDisplay">[ ]</div>
+            <div class="controls">
+                <input type="text" id="elementInput" placeholder="Enter value (e.g., 42)" />
+                <button class="operation" id="pushBtn">Push</button>
+                <button class="operation" id="popBtn">Pop</button>
+                <button class="operation" id="peekBtn">Peek</button>
+            </div>
+            <div class="controls">
+                <button id="isEmptyBtn">isEmpty</button>
+                <button id="sizeBtn">Size</button>
+                <button id="clearBtn">Clear</button>
+            </div>
+            <div class="info">
+                <span>Stack size: <span id="sizeValue">0</span></span>
+                <span class="message" id="messageArea"></span>
+            </div>
+        </div>
+    </section>
+
+    <section id="code-implementations" class="code-section">
+        <h1>Code Implementations</h1>
+        
+        <div class="code-container">
+            <!-- Array Implementation -->
+            <div class="code-card">
+                <div class="code-header">
+                    <h3>Stack with Arrays (Python)</h3>
+                    <div class="code-actions">
+                        <button class="copy-btn" onclick="copyCode('array-code')">
+                            <i class="fas fa-copy"></i> Copy
+                        </button>
+                        <button class="download-btn" onclick="downloadCode('stack-with-arrays.py', 'array-code')">
+                            <i class="fas fa-download"></i> Download
+                        </button>
+                    </div>
+                </div>
+                <div class="code-preview">
+                    <img src="arr.png" alt="Array Stack Implementation" class="code-image">
+                </div>
+                <pre id="array-code" class="hidden-code">
+class Stack:
+    def __init__(self):
+        self.items = []
+    
+    def push(self, item):
+        self.items.append(item)
+        print(f"Pushed: {item}")
+    
+    def pop(self):
+        if not self.is_empty():
+            item = self.items.pop()
+            print(f"Popped: {item}")
+            return item
+        print("Stack Underflow!")
+        return None
+    
+    def peek(self):
+        if not self.is_empty():
+            return self.items[-1]
+        return None
+    
+    def is_empty(self):
+        return len(self.items) == 0
+    
+    def size(self):
+        return len(self.items)
+    
+    def display(self):
+        print(f"Stack: {self.items}")</pre>
+            </div>
+
+            <!-- Linked List Implementation -->
+            <div class="code-card">
+                <div class="code-header">
+                    <h3>Stack with Linked Lists (Python)</h3>
+                    <div class="code-actions">
+                        <button class="copy-btn" onclick="copyCode('linkedlist-code')">
+                            <i class="fas fa-copy"></i> Copy
+                        </button>
+                        <button class="download-btn" onclick="downloadCode('stack-with-linked-lists.py', 'linkedlist-code')">
+                            <i class="fas fa-download"></i> Download
+                        </button>
+                    </div>
+                </div>
+                <div class="code-preview">
+                    <img src="Stack-sll.png" alt="Linked List Stack Implementation" class="code-image">
+                </div>
+                <pre id="linkedlist-code" class="hidden-code">
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedListStack:
+    def __init__(self):
+        self.top = None
+        self._size = 0
+    
+    def push(self, item):
+        new_node = Node(item)
+        new_node.next = self.top
+        self.top = new_node
+        self._size += 1
+        print(f"Pushed: {item}")
+    
+    def pop(self):
+        if self.is_empty():
+            print("Stack UnderFlow!")
+            return None
+        
+        popped_node = self.top
+        self.top = self.top.next
+        self._size -= 1
+        print(f"Popped: {popped_node.data}")
+        return popped_node.data
+    
+    def peek(self):
+        if self.is_empty():
+            return None
+        return self.top.data
+    
+    def is_empty(self):
+        return self.top is None
+    
+    def size(self):
+        return self._size
+    
+    def display(self):
+        if self.is_empty():
+            print("Stack is empty")
+            return
+        
+        current = self.top
+        elements = []
+        while current:
+            elements.append(current.data)
+            current = current.next
+        
+        print(f"Stack (top -> bottom): {elements}")</pre>
+            </div>
+
+            <!-- JavaScript Implementation -->
+            <div class="code-card">
+                <div class="code-header">
+                    <h3>Stack with JavaScript</h3>
+                    <div class="code-actions">
+                        <button class="copy-btn" onclick="copyCode('js-code')">
+                            <i class="fas fa-copy"></i> Copy
+                        </button>
+                        <button class="download-btn" onclick="downloadCode('stack.js', 'js-code')">
+                            <i class="fas fa-download"></i> Download
+                        </button>
+                    </div>
+                </div>
+                <pre id="js-code" class="code-content">
+class Stack {
+    constructor() {
+        this.items = [];
+    }
+
+    push(element) {
+        this.items.push(element);
+    }
+
+    pop() {
+        if (this.isEmpty()) {
+            throw new Error("Stack underflow");
+        }
+        return this.items.pop();
+    }
+
+    peek() {
+        if (this.isEmpty()) {
+            throw new Error("Stack is empty");
+        }
+        return this.items[this.items.length - 1];
+    }
+
+    isEmpty() {
+        return this.items.length === 0;
+    }
+
+    size() {
+        return this.items.length;
+    }
+
+    clear() {
+        this.items = [];
+    }
+
+    getAll() {
+        return [...this.items];
+    }
+}</pre>
+            </div>
+        </div>
+    </section>
+
+    <section id="complexities" class="complexities">
+        <h1>Time & Space Complexities</h1>
+        <div class="table-responsive">
+            <table>
+                <tr><th>Operation</th><th>Time</th><th>Auxiliary Space</th></tr>
+                <tr><td>push</td><td>O(1)</td><td>O(1) per element</td></tr>
+                <tr><td>pop</td><td>O(1)</td><td>O(1)</td></tr>
+                <tr><td>peek</td><td>O(1)</td><td>O(1)</td></tr>
+                <tr><td>isEmpty</td><td>O(1)</td><td>O(1)</td></tr>
+                <tr><td>size</td><td>O(1)</td><td>O(1)</td></tr>
+                <tr><td>display</td><td>O(n)</td><td>O(1)</td></tr>
+            </table>
+        </div>
+        <p><strong>Overall space complexity:</strong> O(n) where n is the number of elements</p>
+    </section>
+    
+    <section id="participants" class="participants">
+        <h1>Team Members</h1>
+        <div class="table-responsive">
+            <table>
+                <tr><th>Name</th><th>Student Number</th><th>Registration Number</th></tr>
+                <tr><td>MUWANGUZI DAVID JEREMIAH</td><td>2500728758</td><td>25/U/28758/PS</td></tr>
+                <tr><td>NAMUGENYI DOREEN MUGALU</td><td>2500703521</td><td>25/U/03521/PS</td></tr>
+                <tr><td>KIWUUWA GODFREY</td><td>2500705798</td><td>25/U/05798/PS</td></tr>
+                <tr><td>MUYINDA BRIAN</td><td>2500703483</td><td>25/U/03483/PSA</td></tr>
+                <tr><td>NIMURUNGI TALENT</td><td>2500728770</td><td>25/U/28770/PSA</td></tr>
+                <tr><td>WAMALA ARTHUR</td><td>2500703611</td><td>25/U/03611/PS</td></tr>
+                <tr><td>RUKUNDO ABRAHAM JORDAN</td><td>2500728553</td><td>25/U/28553/PS</td></tr>
+            </table>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Group B DSA</h3>
+                    <p>The Legends</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#live-demo">Live Demo</a></li>
+                        <li><a href="#code-implementations">Code</a></li>
+                        <li><a href="#complexities">Complexities</a></li>
+                        <li><a href="#participants">Team</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Makerere University, Jinja</p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+256702866529">+256 702 866 529</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:litmustechsolutions@gmail.com">litmustechsolutions@gmail.com</a></p>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Stay Updated</h4>
+                    <p>Subscribe for latest discussions and updates</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Litmus Tech Solutions. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+    <script>
+        // Mobile navigation
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('active');
+                document.querySelector('.hamburger').classList.remove('active');
+            });
+        });
+
+        // Copy code function
+        function copyCode(elementId) {
+            const code = document.getElementById(elementId).textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                alert('Code copied to clipboard!');
+            });
+        }
+
+        // Download code function
+        function downloadCode(filename, elementId) {
+            const code = document.getElementById(elementId).textContent;
+            const blob = new Blob([code], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>

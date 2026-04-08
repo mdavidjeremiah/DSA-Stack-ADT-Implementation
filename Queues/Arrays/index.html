@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Queue ADT | FIFO Visualizer & Interactive Demo</title>
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="queue-card">
+  <div class="queue-header">
+    <h1>
+      <i class="fas fa-layer-group"></i> 
+      Queue ADT
+    </h1>
+    <div class="sub">
+      <span><i class="fas fa-arrow-right"></i> FIFO principle</span>
+      <span><i class="fas fa-code-branch"></i> Abstract Data Type</span>
+      <span class="badge-ad">enqueue · dequeue · front · size</span>
+    </div>
+  </div>
+
+  <div class="queue-content">
+    <!-- Input row -->
+    <div class="input-group">
+      <div class="input-wrapper">
+        <i class="fas fa-plus-circle"></i>
+        <input type="text" id="valueInput" placeholder="e.g., 42, 'Hello', Task..." autocomplete="off">
+      </div>
+      <button id="enqueueBtn" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> Enqueue</button>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+      <button id="dequeueBtn" class="btn btn-secondary"><i class="fas fa-sign-out-alt"></i> Dequeue</button>
+      <button id="frontBtn" class="btn btn-info"><i class="fas fa-eye"></i> Front / Peek</button>
+      <button id="clearBtn" class="btn btn-warning"><i class="fas fa-trash-alt"></i> Clear All</button>
+      <button id="sampleBtn" class="btn btn-secondary"><i class="fas fa-cubes"></i> Add Sample</button>
+    </div>
+
+    <!-- Statistics Panel -->
+    <div class="stats-panel">
+      <div class="stat"><span class="stat-label"><i class="fas fa-hourglass-half"></i> SIZE</span><span id="sizeValue" class="stat-value">0</span></div>
+      <div class="stat"><span class="stat-label"><i class="fas fa-flag-checkered"></i> FRONT</span><span id="frontValue" class="stat-value front-value">—</span></div>
+      <div class="stat"><span class="stat-label"><i class="fas fa-ban"></i> IS EMPTY?</span><span id="isEmptyStatus" class="stat-value">Yes</span></div>
+    </div>
+
+    <!-- Queue Visualization -->
+    <div class="queue-viz">
+      <div class="queue-label">
+        <span><i class="fas fa-arrow-left"></i> FRONT (first out)</span>
+        <span><i class="fas fa-arrow-right"></i> REAR (last in)</span>
+      </div>
+      <div id="queueContainer" class="queue-container">
+        <!-- dynamic queue items injected -->
+        <div class="empty-queue-placeholder">
+          <i class="fas fa-inbox"></i> Queue is empty — enqueue some elements
+        </div>
+      </div>
+    </div>
+
+    <!-- Status Messages -->
+    <div id="statusMessage" class="status-area">
+      <i class="fas fa-info-circle"></i>
+      <span id="statusText">Ready. Use operations to interact with Queue ADT.</span>
+    </div>
+  </div>
+  <div class="footer">
+    <i class="fas fa-code"></i> Queue ADT • FIFO • Enqueue / Dequeue / Front / Size / Clear • Interactive demo
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
